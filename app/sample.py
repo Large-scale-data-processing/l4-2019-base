@@ -1,3 +1,5 @@
+"""Sample pySpark app."""
+
 from pyspark import SparkContext, SparkConf
 
 conf = SparkConf().setAppName('appName').setMaster('local')
@@ -8,6 +10,10 @@ dist_data = sc.parallelize(data)
 
 large_data = dist_data.flatMap(lambda a: range(1000))
 
-add = lambda x, y: x + y
+
+def add(x, y):
+    """Add operation for pySpark."""
+    x + y
+
 
 print(large_data.reduce(add))
