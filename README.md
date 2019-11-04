@@ -41,46 +41,45 @@ For each task make sure that `tox` passes.
 2. **Spark installation** 
 
     Update Dockerfile and docker-compose:
-    
-        - download and instal Spark
-        - run code using pySpark command
+    - download and instal Spark
+    - run code using pySpark command
 
 3. **MongoDB connection** 
 
     Read data from mongodb using SparkSQL and appropriate connector. 
 
-        - You need to add jar to Spark runtime, use --packages flag for pySpark
-        - mongodb needs to be a separate service in docker-compose, utilize appropriate directives to get connections
+    - You need to add jar to Spark runtime, use --packages flag for pySpark
+    - mongodb needs to be a separate service in docker-compose, utilize appropriate directives to get connections
 
 4. **Data split** 
 
     Divide data into training and testing sets using some criterion (date of acquisition, first n items)
 
-        - you can use appropriate ready to use the class from Spark
+    - you can use appropriate ready to use the class from Spark
 
 5. **Regression**
 
     Create regression pipeline:
 
-        - select a submission attribute that we want to be our dependent variable
-        - map data to contain a dependent variable and features vector columns
-        - create ML pipeline
-        - evaluate your regressor using RMSE on train and test sets
+    - select a submission attribute that we want to be our dependent variable
+    - map data to contain a dependent variable and features vector columns
+    - create ML pipeline
+    - evaluate your regressor using RMSE on train and test sets
 
 6. **Binary classification**
 
     Create a binary classification pipeline:
 
-        - select a submission attribute that we want to be our class
-        - map data to contain class and features vector columns
-        - create ML pipeline
-        - evaluate your classifier computing F1 metric
+    - select a submission attribute that we want to be our class
+    - map data to contain class and features vector columns
+    - create ML pipeline
+    - evaluate your classifier computing F1 metric
 
 6. **Multi-class classification**
 
     Create a multi-class classification pipeline:
 
-        - select a submission attribute that we want to be our class (multi-class)
-        - map data to contain class and features vector columns
-        - create ML pipeline
-        - evaluate your classifier using MulticlassClassificationEvaluator
+    - select a submission attribute that we want to be our class (multi-class)
+    - map data to contain class and features vector columns
+    - create ML pipeline
+    - evaluate your classifier using MulticlassClassificationEvaluator
