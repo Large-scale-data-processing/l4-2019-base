@@ -13,7 +13,7 @@ large_data = dist_data.flatMap(lambda a: range(1000))
 
 def add(x, y):
     """Add operation for pySpark."""
-    x + y
+    return x + y
 
 
 print(large_data.reduce(add))
